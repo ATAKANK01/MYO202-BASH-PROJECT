@@ -2,8 +2,8 @@
 
 # Atakan KORKMAZ
 # 2420171028
-# https://www.btkakademi.gov.tr/portal/course/docker-temelleri-21907 (Sertifika No: nKqhn7NELB)
-# https://www.btkakademi.gov.tr/portal/course/siber-guvenlikte-linux-isletim-sistemleri-10869 (Sertifika No: pKmhqJpE7Z)
+# https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=nKqhn7NELB
+# https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId= pKmhqJpE7Z
 # https://credsverse.com/credentials/0403af7d-dbec-4f62-b6f4-5e16d879e597
 
 LOG_FILE="report.log"
