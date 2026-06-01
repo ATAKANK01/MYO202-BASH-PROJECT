@@ -46,10 +46,12 @@ date -u +"%Y-%m-%dT%H:%M:%SZ" > "$LOG_FILE"
 }
 
 echo -n "Lutfen parolanizi giriniz: "
-read -s PAROLA
+read -rs PAROLA_RAW
 echo ""
 
-gpg --batch --yes --pinentry-mode loopback --passphrase "$PAROLA" --symmetric --cipher-algo AES256 "$LOG_FILE"
+PAROLA=$(echo -n "$PAROLA_RAW" | tr -d '\r' | tr -d '\n')
+
+echo "$PAROLA" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --symmetric --cipher-algo AES256 "$LOG_FILE"
 
 [ -f "report.log.gpg" ] && rm "$LOG_FILE" && echo "Islem basarili! Dosya AES256 ile sifrelendi."
 [ -f "report.log.gpg" ] || echo "Hata! Sifreleme yapilamadi."
